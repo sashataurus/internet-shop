@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 64rem;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -70,9 +70,9 @@ body {
 
 /* Уровень 3: Два tagline на одном уровне */
 .tagline-section {
-    display: flex; /* Включаем flexbox */
-    justify-content: space-between; /* Левый слева, правый справа */
-    align-items: center; /* Выравниваем по вертикали */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .tagline_left {
@@ -89,6 +89,34 @@ body {
 
 }
 
+/* Товары */
+.products {
+    padding: 0 0 20px;
+}
+
+.products-grid {
+    display: flex;
+    display: grid;
+    justify-content: center; 
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem 1rem 1rem 1rem;
+}
+
+.product-card {
+    padding: 0;
+}
+
+.product-image {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.color-square {
+    width: 20rem;
+    height: 20rem;
+}
+
 /* Герой секция */
 .hero {
     text-align: center;
@@ -96,7 +124,7 @@ body {
 
 .hero-content {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto 70px;
 }
 
 .hero-title {
