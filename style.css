@@ -2,8 +2,16 @@
 @font-face {
     font-family: 'Delicious Handrawn';
     src: url('fonts/DeliciousHandrawn-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fragment Mono';
+    src: url('fonts/FragmentMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-Bold.ttf') format('truetype');
 }
 
 * {
@@ -13,94 +21,76 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #2d5016; /* Зеленый цвет для эко-тематики */
-    background-color: #f9fbf7;
+    background-color: white;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    
 }
 
-/* Шапка */
 .header {
-    background-color: #ffffff;
     padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Уровень 1: CART сверху */
 .header-top {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 30px;
+    justify-content: flex-end; /* Кнопка справа */
+    margin-bottom: 10px; /* Отступ до лого */
 }
 
+.cart-btn {
+    font-family: 'Fragment Mono';
+    color: black;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    background: white;
+    
+}
+
+/* Уровень 2: Логотип по центру */
 .logo-section {
-    text-align: left;
+    text-align: center; /* Лого по центру */
+    margin-bottom: 30px; /* Отступ до tagline */
 }
 
 .logo {
     font-family: 'Delicious Handrawn';
-    font-size: 9rem;
-    color: #000000;
-    margin-bottom: 5px;
+    font-size: 10rem;
+    color: black;
+
 }
 
-
-.tagline {
-    font-size: 1rem;
-    color: #666;
-    font-style: italic;
+/* Уровень 3: Два tagline на одном уровне */
+.tagline-section {
+    display: flex; /* Включаем flexbox */
+    justify-content: space-between; /* Левый слева, правый справа */
+    align-items: center; /* Выравниваем по вертикали */
 }
 
-.cart-btn {
-    background: #4a7c59;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+.tagline_left {
+    font-family: 'Fragment Mono';
+    font-size: 0.7rem;
+    color: black;
+
 }
 
-.cart-btn:hover {
-    background: #3a6347;
-}
+.tagline_right {
+    font-family: 'Fragment Mono';
+    font-size: 0.7rem;
+    color: black;
 
-/* Навигация */
-.navigation {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    border-top: 1px solid #e8efe3;
-    border-bottom: 1px solid #e8efe3;
-    padding: 15px 0;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #2d5016;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-}
-
-.nav-link:hover {
-    color: #4a7c59;
 }
 
 /* Герой секция */
 .hero {
-    background: linear-gradient(135deg, #e8efe3 0%, #d4e6c9 100%);
-    padding: 100px 0;
     text-align: center;
 }
 
@@ -110,21 +100,16 @@ body {
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2d5016;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-subtitle {
+    font-family: 'Rubik';
     font-size: 1.3rem;
-    color: #4a7c59;
-    margin-bottom: 30px;
+    color: black;
+    margin-bottom: 5px;
 }
 
+/*
 .cta-button {
-    background: #2d5016;
+    font-family: 'Rubik';
+    background: black;
     color: white;
     border: none;
     padding: 15px 40px;
@@ -139,25 +124,7 @@ body {
     background: #4a7c59;
     transform: translateY(-2px);
 }
-
-/* Секция товаров */
-.products {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2d5016;
-    margin-bottom: 50px;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+*/
 
 /* Адаптивность для планшетов */
 @media (max-width: 768px) {

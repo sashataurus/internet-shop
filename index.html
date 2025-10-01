@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,22 @@
 <body>
     <header class="header">
         <div class="container">
+            <!-- Уровень 1: CART сверху -->
             <div class="header-top">
-                <div class="logo-section">
-                    <h1 class="logo">ZERO WASTE</h1>
-                    <p class="tagline">A new eco company</p>
-                </div>
                 <button class="cart-btn">CART</button>
             </div>
+
+            <!-- Уровень 2: Логотип по центру -->
+            <div class="logo-section">
+                <h1 class="logo">ZERO WASTE</h1>
+            </div>
             
-            <nav class="navigation">
-                <a href="#" class="nav-link">LIFESTYLE</a>
-                <a href="#" class="nav-link">PURE</a>
-                <a href="#" class="nav-link">NATURAL</a>
-                <a href="#" class="nav-link">ORGANIC</a>
-                <a href="#" class="nav-link">UPCYCLED</a>
-            </nav>
+            <!-- Уровень 3: Два tagline на одном уровне -->
+            <div class="tagline-section">
+                <p class="tagline_left">A new eco company</p>
+                <p class="tagline_right">@zerowaste</p>
+            </div>
+            
         </div>
     </header>
 
@@ -30,19 +32,9 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">Small steps create a big impact.</h2>
-                    <p class="hero-subtitle">Start your eco journey with us!</p>
-                    <button class="cta-button">Shop Now</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Здесь позже добавим товары -->
-        <section class="products">
-            <div class="container">
-                <h2 class="section-title">Our Products</h2>
-                <div class="products-grid" id="products-container">
-                    <!-- Товары будут добавляться через JavaScript -->
+                    <p class="hero-title">Small steps create a big impact.</p>
+                    <p class="hero-title">Start your eco journey with us!</p>
+                    <!-- <button class="cta-button">Shop Now</button> -->
                 </div>
             </div>
         </section>
