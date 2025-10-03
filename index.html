@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="header">
         <div class="container">
             <div class="header-top">
@@ -21,16 +22,17 @@
             </div>
         </div>
     </header>
+
     <section class="products">
         <div class="container">
             <div class="products-grid">
 
-                <div class="product-card">
+                <div class="product-card product-card-with-hover">
                     <img src="images/bottle.png" class="product-image">
                     <div class="product-hover-content">
-                        <div class="product-hover-name">Bottle</div>
-                        <div class="product-hover-price">5$</div>
-                        <button class="add-to-cart-btn">add to cart</button>
+                        <div class="product-hover-name">bottle</div>
+                        <div class="product-hover-price">4$</div>
+                        <button class="add-to-cart-btn">Add to cart</button>
                     </div>
                 </div> 
 
@@ -39,46 +41,82 @@
                         <div class="square-text">REFILL</div>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card product-card-with-hover">
                     <img src="images/bag.png" class="product-image">
-                </div>  
+                    <div class="product-hover-content">
+                        <div class="product-hover-name">bag</div>
+                        <div class="product-hover-price">5$</div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
+                </div> 
+
                 <div class="product-card">
                     <div class="color-square" style="background-color: rgba(146, 158, 97, 0.7);">
                         <div class="square-text">LIFESTYLE</div>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card product-card-with-hover">
                     <img src="images/hairbrush.png" class="product-image">
+                    <div class="product-hover-content">
+                        <div class="product-hover-name">hairbrush</div>
+                        <div class="product-hover-price">3$</div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
                 </div>
+
                 <div class="product-card">
                     <div class="color-square" style="background-color: #F8EDDE;">
                         <div class="square-text">PURE</div>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card product-card-with-hover">
                     <img src="images/toothbrushes.jpeg" class="product-image">
+                    <div class="product-hover-content">
+                        <div class="product-hover-name">toothbrush</div>
+                        <div class="product-hover-price">2$</div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
                 </div>
+
                  <div class="product-card">
                     <div class="color-square" style="background-color: #D3C8BA;">
                         <div class="square-text">NATURAL</div>
                     </div>
-                </div>                             
-                <div class="product-card">
+                </div>    
+
+                <div class="product-card product-card-with-hover">
                     <img src="images/soap.png" class="product-image">
+                    <div class="product-hover-content">
+                        <div class="product-hover-name">soap</div>
+                        <div class="product-hover-price">2$</div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
                 </div>
+
                 <div class="product-card">
                     <div class="color-square" style="background-color: rgba(170, 137, 163, 0.6);">
                         <div class="square-text">ORGANIC</div>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card product-card-with-hover">
                     <img src="images/pens.png" class="product-image">
+                    <div class="product-hover-content">
+                        <div class="product-hover-name">pen</div>
+                        <div class="product-hover-price">1$</div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
                 </div>
+
                 <div class="product-card">
                     <div class="color-square" style="background-color: rgba(201, 166, 162, 0.66);">
                         <div class="square-text">UPCYCLED</div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -92,6 +130,57 @@
             </div>
         </section>
     </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Cart</h2>
+            
+            <div class="cart-items">
+                <div class="empty-cart">
+                    <p>your cart is empty</p>
+                </div>
+            </div>
+            
+            <div class="cart-total">
+                <strong>Total: <span id="total-price">0</span>$</strong>
+            </div>
+            
+            <button class="checkout-btn">Place Order</button>
+        </div>
+    </div>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
+            <h2 class="modal-title">Place Order</h2>
+            
+            <form id="order-form" class="order-form">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <button type="submit" class="submit-order-btn">Create Order</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

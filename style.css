@@ -1,4 +1,3 @@
-/* Подключаем твой рукописный шрифт */
 @font-face {
     font-family: 'Delicious Handrawn';
     src: url('fonts/DeliciousHandrawn-Regular.ttf') format('truetype');
@@ -25,7 +24,7 @@ body {
 }
 
 .container {
-    max-width: 64rem;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -36,11 +35,10 @@ body {
     padding: 20px 0;
 }
 
-/* Уровень 1: CART сверху */
 .header-top {
     display: flex;
-    justify-content: flex-end; /* Кнопка справа */
-    margin-bottom: 10px; /* Отступ до лого */
+    justify-content: flex-end; 
+    margin-bottom: 10px; 
 }
 
 .cart-btn {
@@ -55,10 +53,9 @@ body {
     
 }
 
-/* Уровень 2: Логотип по центру */
 .logo-section {
-    text-align: center; /* Лого по центру */
-    margin-bottom: 30px; /* Отступ до tagline */
+    text-align: center; 
+    margin-bottom: 30px; 
 }
 
 .logo {
@@ -68,7 +65,6 @@ body {
 
 }
 
-/* Уровень 3: Два tagline на одном уровне */
 .tagline-section {
     display: flex;
     justify-content: space-between;
@@ -89,44 +85,49 @@ body {
 
 }
 
-/* Товары */
 .products {
     padding: 0 0 20px;
 }
 
 .products-grid {
-    display: flex;
     display: grid;
-    justify-content: center; 
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 1rem 1rem 1rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    justify-content: center;
+    gap: 10px; 
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .product-card {
+    display: flex;
+    justify-content: center;
     padding: 0;
     position: relative;
+}
+
+.product-card-with-hover {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
     cursor: pointer;
 }
 
-/* Затемнение и появление текста при наведении */
-.product-card::before {
+.product-card-with-hover::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Изначально прозрачный */
+    background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.3s ease;
     z-index: 1;
 }
 
-.product-card:hover::before {
-    background-color: rgba(0, 0, 0, 0.7); /* Темный overlay при наведении */
+.product-card-with-hover:hover::before {
+    background-color: rgba(0, 0, 0, 0.7); 
 }
 
-/* Контейнер для текста и кнопки */
 .product-hover-content {
     position: absolute;
     top: 50%;
@@ -134,18 +135,17 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    opacity: 0; /* Изначально скрыт */
+    opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 2;
     width: 100%;
     padding: 0 20px;
 }
 
-.product-card:hover .product-hover-content {
-    opacity: 1; /* Показываем при наведении */
+.product-card-with-hover:hover .product-hover-content {
+    opacity: 1;
 }
 
-/* Стили для текста в hover-эффекте */
 .product-hover-name {
     font-family: 'Fragment Mono';
     font-size: 1.8rem;
@@ -160,7 +160,6 @@ body {
     opacity: 0.9;
 }
 
-/* Кнопка добавления в корзину */
 .add-to-cart-btn {
     font-family: 'Fragment Mono';
     background: #4a7c59;
@@ -178,29 +177,31 @@ body {
 }
 
 .product-image {
-    width: 20rem;
-    height: 20rem;
+    width: 100%;
+    height: 350px;
+    max-width: 350px;
     object-fit: cover;
 }
 
 .color-square {
-    width: 20rem;
-    height: 20rem;
+    width: 100%;
+    height: 350px;
+    max-width: 350px;
+    object-fit: cover;
     position: relative;
 }
 
 .square-text {
-    position: absolute; /* Вырываем из потока */
-    top: 50%;           /* Ставим по центру вертикали */
-    left: 50%;          /* Ставим по центру горизонтали */
-    transform: translate(-50%, -50%); /* Сдвигаем обратно на половину размера */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: 'Rubik';
     color: black;
     font-size: 1.5rem;
     text-align: center;
 }
 
-/* Герой секция */
 .hero {
     text-align: center;
 }
@@ -215,4 +216,229 @@ body {
     font-size: 1.3rem;
     color: black;
     margin-bottom: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-modal:hover {
+    color: black;
+}
+
+.modal-title {
+    font-family: 'Rubik';
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item-details h4 {
+    font-family: 'Fragment Mono';
+    font-size: 1rem;
+    margin: 0;
+    color: #333;
+}
+
+.item-details p {
+    font-family: 'Fragment Mono';
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+.quantity-btn {
+    background: #f1f1f1;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Fragment Mono';
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background: #e1e1e1;
+}
+
+.quantity-btn:disabled {
+    background: #f9f9f9;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.item-quantity span {
+    font-family: 'Fragment Mono';
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 25px;
+    text-align: center;
+    color: #333;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px 0;
+    color: #666;
+}
+
+.empty-cart p {
+    font-family: 'Fragment Mono';
+    font-size: 1rem;
+}
+
+.cart-total {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    font-family: 'Fragment Mono';
+    font-size: 1.2rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Fragment Mono';
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: #3a6347;
+}
+
+.checkout-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.order-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Fragment Mono';
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Fragment Mono';
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4a7c59;
+}
+
+.submit-order-btn {
+    width: 100%;
+    padding: 15px;
+    background: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Fragment Mono';
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-order-btn:hover {
+    background: #3a6347;
+}
+
+.submit-order-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
 }
